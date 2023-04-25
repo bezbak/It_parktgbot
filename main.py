@@ -47,9 +47,9 @@ async def start(message: types.Message):
 @dp.message_handler()
 async def send_info(message:types.Message):
     for i in list_of_groups:
-        if str(message.chat.id) in list_of_groups:
+        if str(message.chat.id) in list_of_groups :
             pass
-        else:   
+        elif message.from_user.username == "whoisranel":   
             await send_message_to_group(i, message.text)
 
 def main():
